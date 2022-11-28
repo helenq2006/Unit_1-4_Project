@@ -14,7 +14,9 @@ public class Main {
         if (confirm.equals("okay")) {
             System.out.println("What would you like to learn about? \n Please choose an option: \n History \n Regents Phys Topics \n Equations \n Random!");
             String topicChoice = scan.nextLine();
-            System.out.println();
+
+            Physics obj1 = new Physics();
+            System.out.print(obj1.choiceOfTopics(topicChoice));
 
 
 
