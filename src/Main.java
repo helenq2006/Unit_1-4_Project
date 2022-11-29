@@ -10,21 +10,27 @@ public class Main {
         Physics obj = new Physics();
         System.out.println(obj.Greeting(name));
 
-        String confirm = scan.nextLine();
-        if (confirm.equals("okay")) {
-            System.out.println("What would you like to learn about? \n Please choose an option: \n History \n Regents Phys Topics \n Equations \n Random!");
+        System.out.println("How old are you?");
+        int age = scan.nextInt();
+        scan.nextLine(); //clears buffer
+
+        Physics obj1 = new Physics();
+        System.out.println(obj1.Greeting(age));
+
+        double confirm = scan.nextDouble();
+        scan.nextLine(); //clears buffer
+
+        if (confirm == (age + 24)) {
+            System.out.println("What would you like to learn about? \n Please choose an option: \n -History \n -Regents Phys Topics \n -Equations");
             String topicChoice = scan.nextLine();
 
-            Physics obj1 = new Physics();
-            System.out.print(obj1.choiceOfTopics(topicChoice));
-
-
-
+            Physics obj2 = new Physics();
+            obj2.choiceOfTopics(topicChoice);
 
         } else {
-            while (!confirm.equals("okay")) {
-                System.out.println("That's okay! Have a good day. See you next time!");
-                confirm = scan.nextLine();
+            while (confirm != (age + 24)) {
+                System.out.println("That's not the correct code! Please try again if you want to run the bot. Otherwise, please have a good day. Hope to see you soon!");
+                confirm = scan.nextInt();
             }
         }
     }
