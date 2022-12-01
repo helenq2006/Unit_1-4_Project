@@ -12,6 +12,8 @@ public class Physics {
     private int subTopics; //stores num of subtopics in course
     private int total; //stores total num of topics + subtopics
 
+    private String num; //stores num
+
     /** Constructor for Physics class. This initializes each variable above. Strings are
      * set to empty Strings, doubles are set to 0.0, ints are set to 0
      */
@@ -24,6 +26,7 @@ public class Physics {
         topics = 0;
         subTopics = 0;
         total = 0;
+        num = "fourty";
     }
 
     /** Greeting method for the Physics class. This method will return a String welcoming
@@ -39,14 +42,14 @@ public class Physics {
     }
 
     /** Greeting method for Physics class. This method will return a String containing
-     * the secret code, which is the user's age + 24
+     * the secret code, which is the user's age + 24 * length of the String num
      * @param age represents the age of the user
      * @return returns a String in a properly formatted sentence containing the secret code
      */
 //asks user for their age and converts it into a secret code
     public String Greeting(int age) {
         String str = "";
-        secretCode = (double) (Math.abs(age + 24));
+        secretCode = (double) (Math.abs(age + 24) * num.length());
         str += "Your secret code is " + secretCode + " . Please enter that to continue.";
         return str;
     }
@@ -93,13 +96,4 @@ public class Physics {
         return " \nThank you " + name + " for using this program!";
     }
 
-    /** lengthOfName method for the Physics class. This method will return the
-     * length of the name inputted by the user
-     * @param name represents the name of the user
-     * @return returns the length of the name
-     */
-// returns length of the user's name inputted
-    public int lengthOfName(String name){
-        return name.length();
-    }
 }
