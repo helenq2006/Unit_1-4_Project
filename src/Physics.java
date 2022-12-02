@@ -29,13 +29,23 @@ public class Physics {
         num = "fourty";
     }
 
+    public Physics(String name) {
+        this.name = name;
+        topicChoice = "";
+        age = 0;
+        secretCode = 0.0;
+        topics = 0;
+        subTopics = 0;
+        total = 0;
+        num = "fourty";
+    }
+
     /** Greeting method for the Physics class. This method will return a String welcoming
      * the user based on the name inputted when the program asks for their name
-     * @param name represents the name of the user
      * @return returns a String in a properly formatted sentence containing the welcome message
      */
 // greets user by name; bot gives a bit of info about itself
-    public String Greeting(String name) {
+    public String Greeting() {
             String str = "";
             str += "Hi " + name + ". Welcome to the physBot helper! \nI am here to help you with your questions about physics.";
             return str;
@@ -61,9 +71,9 @@ public class Physics {
      */
 // if then statement that prints specific information based on user choice
     public void choiceOfTopics(String topicChoice) {
-        if ((topicChoice.equals("History") || (topicChoice.equals("history")))) {
+        if (topicChoice.toLowerCase().equals("History")) {
             System.out.println("Physics is a branch of science whose primary topics of study are matter and energy.\n It is divided into classical and modern physics.\n Developed in the 20th century,\n modern physics include quantum mechanics,special relativity, and general relativity.\n Classical physics deals with theories of physics that may not be precise since it is old.");
-        } else if ((topicChoice.equals("Regents Phys Topics") || (topicChoice.equals("regents phys topics")))) {
+        } else if (topicChoice.toLowerCase().equals("Regents Phys Topics")) {
             int topics = 5;
             int subTopics = 19;
             int total = topics + subTopics;
